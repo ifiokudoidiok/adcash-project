@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+   <head>
+      <title>KnockoutJS Simple Example</title>
+      <script type='text/javascript' src='knockout-3.4.2.js'></script>
+   </head>
+
+      <body>
+         <h1>Adcash test assignment</h1>
+         <h3>Type tags here using comma, semicolon and line break as delimiters</h3>
+      <p><textarea data-bind = "value: someValue" ></textarea></p>
+      <p><button data-bind = "click: showMessage">Add tags</button></p>
+      <p>Output: <strong data-bind = "text: someValue"></strong></p>
+      <p><button data-bind = "click: updateMessage">Edit tags</button>
+
+      <script type = "text/javascript">
+         function ViewModel () {
+            this.someValue = ko.observable();
+            //this.firstString = ko.observable();
+            
+            this.showMessage =this.someValue();
+           
+         };
+
+         var vm = new ViewModel();
+         ko.applyBindings(vm);
+      </script>
+      
+   </body>
+</html>
